@@ -1,4 +1,4 @@
-public class HomeWorkApp1 {
+public class HomeWorkApp {
     public static void main(String[] args) {
         printThreeWords();
         checkSumSign(-2);

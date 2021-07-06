@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -11,7 +10,7 @@ public class Lesson3 {
         System.out.println("\n");
         Arr3();
         System.out.println("\n");
-        Arr4();
+        Arr4(9,9);
         System.out.println("\n");
         System.out.println(Arrays.toString(Arr5(5,8)));
         System.out.println("\n");
@@ -75,22 +74,18 @@ public class Lesson3 {
     // Определить элементы одной из диагоналей можно по следующему принципу:
     // индексы таких элементов равны, то есть [0][0], [1][1], [2][2], …, [n][n];
 
-    public static void Arr4(){
+    public static void Arr4(int h, int v){
 
-        int[][] arr = new int[3][3];
-        int counter=1;
-        //int[][] table = new int[3][4];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if(i==j)
-                    arr[i][j]=0;
-                else if(i-j==1)
-                    arr[i][j]=1;
-                else if(i-j==-1)
-                    arr[i][j]=2;
-                else
-                    arr[i][j]=counter;
-                counter++;
+        int[][] arr = new int[h][v];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if(i%2!=0){
+                    if(j%2!=0)arr[i][j]=1;
+                    else arr[i][j]=0;
+                }else {
+                    if(j%2==0)arr[i][j]=1;
+                    else arr[i][j]=0;
+                }
             }
         }
         for (int i = 0; i < arr.length; i++) {

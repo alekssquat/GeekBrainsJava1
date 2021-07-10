@@ -14,7 +14,10 @@ public class Lesson6 {
         tom.swim(1);
         tom.swim(-1);
 
-        System.out.println("Total number of animals - "+Animal.getAnimalCounter()+"\n"+Cat.getCatCounter()+" cat"+"\n"+Dog.getDogCounter()+" dog");
+        System.out.println("Total number of animals - ");
+        System.out.println("animal - "+Animal.getCounter());
+        System.out.println("cat - "+Cat.getCounter());
+        System.out.println("dog - "+Dog.getCounter());
 
     }
 }

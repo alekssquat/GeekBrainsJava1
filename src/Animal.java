@@ -2,27 +2,32 @@ public abstract class Animal {
     private String name;
     private int runLimit;
     private int swimLimit;
-    private static int animalCounter;
+    private static int counter;
 
     public Animal(String name, int runLimit, int swimLimit) {
         this.name=name;
         this.runLimit=runLimit;
         this.swimLimit=swimLimit;
-        animalCounter++;
+        counter++;
     }
     Animal(){
-        animalCounter++;
+       counter++;
     }
 
 
-    abstract void run(int distance);
-    abstract void swim(int distance);
+    protected void run(int distance){
+        if(distance>getRunLimit()){
+            System.out.println("too far");
+        }else {
+            System.out.println(getName()+" ran "+distance+" m!");
+        }
+    }
 
+    abstract void swim(int distance);
 
     public String getName(){
         return name;
     }
-
 
     public int getRunLimit() {
         return runLimit;
@@ -32,7 +37,6 @@ public abstract class Animal {
         return swimLimit;
     }
 
-    public static int getAnimalCounter() {
-        return animalCounter;
-    }
+    public static int getCounter(){ return counter;}
+
 }

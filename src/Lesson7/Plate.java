@@ -26,4 +26,8 @@ public class Plate {
     public int getFood() {
         return food;
     }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }

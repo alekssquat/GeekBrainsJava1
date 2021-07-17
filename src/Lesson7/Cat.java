@@ -11,8 +11,15 @@ public class Cat {
         this.isFull=false;
     }
     public void eat(Plate p) {
+        int foodBefore=p.getFood();
         p.decreaseFood(appetite);
-        isFull=true;
+        int foodAfter=p.getFood();//проверяем поел ли кот
+        if(foodBefore>foodAfter){
+            isFull=true;
+        }else {
+            p.fillThePlate(p.getCapacity()-p.getFood()); //если нет поплняем миску до предела
+        }
+
     }
 
     public int getAppetite() {
